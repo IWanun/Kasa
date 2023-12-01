@@ -1,0 +1,29 @@
+@use "../../scss/variable.scss" as colors;
+
+.apartment_page{
+    color: colors.$color-primary;
+    div:first-child{
+        margin-bottom: 1rem;
+    }
+    h1{
+        font-weight: 400;
+       margin-block: 0;
+    }
+    h2{
+        font-weight: 400;
+        margin-top: 0.5em;
+        margin-bottom: 0.2em;
+        font-size: 20px;
+    }
+    
+    .apartment_description_area{
+        display: flex;
+        gap: 3rem;
+        overflow: hidden;
+        @media screen and (width <= 768px) {
+            flex-direction: column;
+        }
+    }
+
+}
+

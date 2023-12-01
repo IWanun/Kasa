@@ -1,0 +1,11 @@
+@use "../scss/variable.scss" as colors;
+
+.footer{
+    background-color: colors.$footer-background-color;
+    color: colors.$color-tertiary;
+    padding: 20px;
+    text-align: center;
+    min-height: 100px;
+    display: grid;
+    place-items: center;
+}

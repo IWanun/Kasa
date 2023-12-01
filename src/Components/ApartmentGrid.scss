@@ -1,0 +1,27 @@
+@use "../scss/variable.scss" as colors;
+
+.grid{
+    background-color: colors.$background-dark;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 3rem;
+    & > * {
+      width: 100%;
+      max-width: 20rem;
+    }
+    }
+  
+    @media screen and (width <=768px) {
+      .grid{
+        justify-content: center;
+        background-color: colors.$background-dark-responsive;
+        padding: 0rem;
+      }
+      
+    }
+  

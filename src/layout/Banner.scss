@@ -1,0 +1,28 @@
+@use "../scss/variable.scss" as colors;
+.banner{
+    position: relative;
+    max-width: 100%;
+    padding-inline: 2rem;
+    border: 1px solid red;
+    background-image: url(https://unsplash.it/1920/1080);
+    background-position: center;
+    background-size: cover;
+    min-height: 140px;
+    min-width: 80vw;
+    margin: auto;
+    border-radius: 2rem;
+    display: grid;
+    place-content: center;
+    color: colors.$color-tertiary;
+    margin-bottom: 2rem;
+
+    &:before{
+        position: absolute;
+        border-radius: 2rem;
+        content: "";
+        inset: 0;
+        opacity: 0.5;
+    }
+}
+
+
