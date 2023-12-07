@@ -10,6 +10,8 @@
     justify-content: space-between;
     margin: auto;
     margin-bottom: 3rem;
+    max-width: 57%;
+    width: 100%;
     & > * {
       width: 100%;
       max-width: 20rem;
@@ -21,6 +23,12 @@
         justify-content: center;
         background-color: colors.$background-dark-responsive;
         padding: 0rem;
+        max-width: 100%;
+        width: 100%;
+      }
+      .grid a{
+        width: 100%;
+        max-width: 100%;
       }
       
     }

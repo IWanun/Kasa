@@ -1,32 +1,25 @@
 @use "../scss/variable.scss" as colors;
 
-.navbar{
-    display:flex;
+.navbar {
+    display: flex;
     align-items: center;
-    gap: 2rem;
     padding: 0 2rem;
     color: colors.$color-primary;
-    font-weight: bold;
-
- & a {
-    text-decoration: none;
-    color: colors.$color-primary;
-
-    &.active {
-        text-decoration: underline;
-    }
-
-    &:hover {
-        text-decoration: underline;
-    }
-
+    font-weight: 700;
+    gap: 2rem;
     @media screen and (width <= 768px) {
-        text-transform: uppercase;
-        font-weight: 400;
+      text-transform: uppercase;
+      font-weight: 400;
     }
-}
-}
-
-.navbar_logo{
-    margin-right: auto;
-}
+    & > *:first-child {
+      margin-right: auto;
+    }
+    & a {
+      text-decoration: none;
+      color: colors.$color-primary;
+      &.active,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }

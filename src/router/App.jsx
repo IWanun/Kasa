@@ -55,4 +55,3 @@ function App() {
 
 export default App;
 
-//Corriger le probleme sur l'animation de la description/equipment//

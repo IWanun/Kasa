@@ -1,28 +1,48 @@
 @use "../scss/variable.scss" as colors;
-.banner{
+.banner {
     position: relative;
-    max-width: 100%;
-    padding-inline: 2rem;
-    border: 1px solid red;
-    background-image: url(https://unsplash.it/1920/1080);
     background-position: center;
     background-size: cover;
+    padding-inline: 2rem;
+    background-image: url("../../images/Acceuil.jpg");
     min-height: 140px;
-    min-width: 80vw;
     margin: auto;
     border-radius: 2rem;
     display: grid;
-    place-content: center;
+    place-items: center;
     color: colors.$color-tertiary;
     margin-bottom: 2rem;
-
-    &:before{
-        position: absolute;
-        border-radius: 2rem;
-        content: "";
-        inset: 0;
-        opacity: 0.5;
+    max-width: 100%;
+    &::before {
+      position: absolute;
+      border-radius: 2rem;
+      content: "";
+      inset: 0;
+      opacity: 0.5;
     }
-}
+  }
+
+  .banner2 {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    padding-inline: 2rem;
+    background-image: url("../../images/A_propos.jpg");
+    min-height: 140px;
+    margin: auto;
+    border-radius: 2rem;
+    display: grid;
+    place-items: center;
+    color: colors.$color-tertiary;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    &::before {
+      position: absolute;
+      border-radius: 2rem;
+      content: "";
+      inset: 0;
+      opacity: 0.5;
+    }
+  }
 
 
