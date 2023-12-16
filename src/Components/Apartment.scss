@@ -6,26 +6,29 @@
     flex-basis: 30%;
     display: grid;
     align-items: end;
-    min-width: 200px;
-    min-height: 200px;
+    width: 100%;
+    height: 100%;
     position: relative;
-
-
+    
    .apartment_image{
     width: 100%;
-    height: 15rem;
+    height: 340px;
     object-fit: cover;
     border-radius: 1rem;
     box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
     filter: brightness(0.8);
+    
    }
 
     .apartment_subtitle{
-        width: 70%;
-        margin-inline-start: 0.5rem;
-        margin-block-end: 0.5rem;
-        color: white;
+        bottom: 20px;
+        color: #fff;
+        font-size: clamp(12px,3vw,18px);
+        font-weight: 500;
+        left: 20px;
         position: absolute;
+        right: 20px;
+        z-index: 20;
     }
 }
 @media screen and (width <=768px) {
