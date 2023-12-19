@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
 import { DescriptionPanel } from '../../Components/DescriptionPanel';
-import { ImageBanner } from '../../Components/ImageBanner';
+import { ImageBanner } from '../../Components/Carousel';
 import { ApartmentHeader } from '../../Components/ApartmentHeader';
 import './ApartmentPage.scss';
-import { useLocation } from 'react-router-dom';
 
 function Apartment() {
   const location = useLocation();
   const [flat, setFlat] = useState(null);
+  const [redirectToErrorPage, setRedirectToErrorPage] = useState(false);
 
   useEffect(() => {
     fetchApartmentData();
-  }, []); // Assurez-vous de spécifier les dépendances correctement pour éviter les avertissements
+  }, []);
 
   function fetchApartmentData() {
     const searchParams = new URLSearchParams(location.search);
@@ -21,9 +22,20 @@ function Apartment() {
       .then((res) => res.json())
       .then((flats) => {
         const flat = flats.find((flat) => flat.id.toString() === apartmentId);
-        setFlat(flat);
+
+        if (flat) {
+          setFlat(flat);
+        } else {
+          // Si l'appartement n'est pas trouvé, définir l'état de redirection
+          setRedirectToErrorPage(true);
+        }
       })
       .catch(console.error);
+  }
+
+  if (redirectToErrorPage) {
+    // Rediriger vers la page d'erreur si l'appartement n'est pas trouvé
+    return <Navigate to="/Error" />;
   }
 
   if (flat === null) return <div>...Loading</div>;
@@ -34,7 +46,10 @@ function Apartment() {
       <ApartmentHeader flat={flat} />
       <div className='apartment_description_area'>
         <DescriptionPanel title="Description" content={flat.description} />
-        <DescriptionPanel title="Equipements" content={flat.equipments.map((equipment, i) => <li key={i}>{equipment}</li>)} />
+        <DescriptionPanel
+          title="Equipements"
+          content={flat.equipments.map((equipment, i) => <li key={i}>{equipment}</li>)}
+        />
       </div>
     </div>
   );

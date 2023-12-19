@@ -31,9 +31,26 @@
         transition: transform 0.3s ease-in-out;
         &.visible {
           transform: translateY(0);
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          letter-spacing: 1px;
+          visibility: visible;
+          opacity: 1;
+          height: auto;
+          padding: 10px;
+          letter-spacing: 1px;
+          
+          color: colors.$color-primary;
+          transition: visibility 0.5s ease-in-out,
+                      opacity 0.5s ease-in-out,
+                      height 0.2s ease-in-out;
         }
         &.hidden {
           transform: translateY(-100%);
+          visibility: hidden;
+          opacity: 0;
+          height: 0;
         }
       }
 

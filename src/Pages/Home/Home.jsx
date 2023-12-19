@@ -1,4 +1,4 @@
-import './Home.css'
+import './Home.scss'
 import Banner from "../../layout/Banner"
 import ApartmentGrid from "../../Components/ApartmentGrid"
 
